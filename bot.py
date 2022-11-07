@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from telegram.ext import Updater, CallbackContext
 from telegram import Update
 
-from handlers.commons import init_handlers
+from app.handlers.commons import init_handlers
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
