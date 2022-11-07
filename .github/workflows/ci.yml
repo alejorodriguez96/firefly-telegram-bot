@@ -26,4 +26,4 @@ jobs:
     - uses: syphar/restore-virtualenv@v1
       id: cache-virtualenv
 
-    - run: run_linters.sh
+    - run: ./run_linters.sh
