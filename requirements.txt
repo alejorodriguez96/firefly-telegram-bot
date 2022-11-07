@@ -1,2 +1,5 @@
 python-telegram-bot==13.14.0
 python-dotenv==0.21.0
+behave==1.2.6
+flake8==5.0.4
+black==22.10
