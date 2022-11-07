@@ -2,9 +2,10 @@ import logging
 import os
 
 from dotenv import load_dotenv
-from telegram.ext import Updater, CallbackContext, Filters
+from telegram.ext import Updater, CallbackContext
 from telegram import Update
-from telegram.ext import CommandHandler, MessageHandler
+
+from handlers.commons import init_handlers
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                      level=logging.INFO)
@@ -22,10 +23,7 @@ if __name__ == '__main__':
     dispatcher = updater.dispatcher
     
     # Handlers
-    start_handler = CommandHandler('start', start)
-    dispatcher.add_handler(start_handler)
-    default_handler = MessageHandler(Filters.all, default)
-    dispatcher.add_handler(default_handler)
+    init_handlers(dispatcher)
     
     # Strat bot
     updater.start_polling()
